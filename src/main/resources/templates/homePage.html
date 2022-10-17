@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<h1> Hello User! :) </h1>
+<br>
+username и password для первого входа с правами админа: <h3>"admin@mail.ru" & "admin"</h3>
+<br>
+и username и password для юзера : <h3>"user@mail.ru" & "user".</h3>
+<br>
+<script>
+    (async () => {
+        let response = await fetch('https://upload.wikimedia.org/wikipedia/ru/3/39/Java_logo.svg');
+
+        let blob = await response.blob(); // скачиваем как Blob-объект
+
+        // создаём <img>
+        let img = document.createElement('img');
+        img.style = 'position:fixed; top:260px; left:100px; width:50px';
+        document.body.append(img);
+
+        // выводим на экран
+        img.src = URL.createObjectURL(blob);
+
+        setTimeout(() => { // прячем через три секунды
+            img.remove();
+            URL.revokeObjectURL(img.src);
+        }, 3000);
+    })()
+</script>
+<h2>
+    <a href="/login">Login</a>
+</h2>
+</body>
+</html>
