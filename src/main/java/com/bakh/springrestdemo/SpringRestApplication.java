@@ -2,8 +2,6 @@ package com.bakh.springrestdemo;
 
 import com.bakh.springrestdemo.model.Role;
 import com.bakh.springrestdemo.model.User;
-import com.bakh.springrestdemo.repository.RoleRepository;
-import com.bakh.springrestdemo.repository.UserRepository;
 import com.bakh.springrestdemo.service.RoleService;
 import com.bakh.springrestdemo.service.UserService;
 import org.springframework.boot.CommandLineRunner;
@@ -19,14 +17,10 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class SpringRestApplication implements CommandLineRunner {
 
-    final UserRepository userRepository;
-    final RoleRepository roleRepository;
     final UserService userService;
     final RoleService roleService;
 
     public SpringRestApplication(UserRepository userRepository, RoleRepository roleRepository, UserService userService, RoleService roleService, EntityManager entityManager) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
         this.userService = userService;
         this.roleService = roleService;
     }
