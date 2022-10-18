@@ -20,7 +20,7 @@ public class SpringRestApplication implements CommandLineRunner {
     final UserService userService;
     final RoleService roleService;
 
-    public SpringRestApplication(UserRepository userRepository, RoleRepository roleRepository, UserService userService, RoleService roleService, EntityManager entityManager) {
+    public SpringRestApplication(UserService userService, RoleService roleService, EntityManager entityManager) {
         this.userService = userService;
         this.roleService = roleService;
     }
